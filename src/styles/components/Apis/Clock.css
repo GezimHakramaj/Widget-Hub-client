@@ -1,0 +1,75 @@
+.clockContainer {
+  height: 30vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock {
+  height: 25vmin;
+  width: 25vmin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../../../images/clock.png);
+  background-size: cover;
+  border: 0.2vmin solid #282c34;
+  border-radius: 50%;
+  box-shadow: 0 -15px 15px rgba(0, 0, 0, 0.15),
+    inset 0 -15px 15px rgba(0, 0, 0, 0.2), 0 15px 15px rgba(0, 0, 0, 0.6),
+    inset 0 15px 15px rgba(0, 0, 0, 0.4);
+}
+
+.clock::before {
+  content: "";
+  position: absolute;
+  width: 1vmin;
+  height: 1vmin;
+  border-radius: 50%;
+  background-color: aquamarine;
+  z-index: 10;
+}
+
+.hourHand,
+.minuteHand,
+.secondHand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40%;
+  background-color: none;
+}
+
+.hourHand::before {
+  content: "";
+  position: absolute;
+  height: 55%;
+  width: 0.4vmin;
+  top: 0.75vmin;
+  background-color: aquamarine;
+  border-radius: 25%;
+  z-index: 3;
+}
+
+.minuteHand::before {
+  content: "";
+  position: absolute;
+  height: 70%;
+  width: 0.325vmin;
+  top: 0;
+  background-color: white;
+  border-radius: 25%;
+  z-index: 4;
+}
+
+.secondHand::before {
+  content: "";
+  position: absolute;
+  height: 90%;
+  width: 0.25vmin;
+  top: 3.25vmin;
+  width: 0.25vmin;
+  background-color: rebeccapurple;
+  border-radius: 25%;
+  z-index: 5;
+}
