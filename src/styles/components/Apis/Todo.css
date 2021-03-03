@@ -4,7 +4,6 @@ Todo List styles below.
 */
 
 .todoListContainer {
-  height: 50vmin;
   display: flex;
   flex-direction: column;
   border: 1px solid black;
@@ -20,7 +19,7 @@ Todo List styles below.
 }
 
 /* Button on todo list header. */
-.todoListHeader :nth-child(2) {
+.todoListHeader button {
   margin-left: 1em;
   background-color: transparent;
   border: 0.1em solid white;
@@ -33,6 +32,7 @@ Todo List styles below.
 
 .todoList {
   height: 30vmin;
+  width: 30vmin;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

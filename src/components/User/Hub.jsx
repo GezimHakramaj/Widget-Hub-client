@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Clock, Covid, News, Weather, List } from "../../components/index";
 
 import { me } from "../../adapters/userAdapters";
-import axios from "axios";
+import "../../styles/components/User/Hub.css";
 
 export default class Hub extends Component {
   state = {
@@ -18,7 +18,13 @@ export default class Hub extends Component {
   };
 
   render() {
-    return <div className="hub">{this.getUserPrefs()}</div>;
+    return (
+      <div className="hub">
+        {this.getUserPrefs().map((widget) => {
+          return <div className="widget">{widget}</div>;
+        })}
+      </div>
+    );
   }
 
   getUserPrefs() {
