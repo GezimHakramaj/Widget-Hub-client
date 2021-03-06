@@ -4,34 +4,32 @@ export default class Item extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
-      excerpt: "",
+      title: this.props.title || "",
+      excerpt: this.props.excerpt || "",
     };
   }
 
   render() {
     return (
-      <div className="todoItem">
-        <div className="itemTitle">
-          <textarea
-            type="text"
-            maxLength="50"
-            onChange={this.handleChange}
-            name="title"
-            placeholder={"Title"}
-            value={this.state.title}
-          ></textarea>
-        </div>
-        <div className="itemExcerpt">
-          <textarea
-            type="text"
-            maxLength="300"
-            onChange={this.handleChange}
-            name="excerpt"
-            placeholder="Today I will...."
-            value={this.state.excerpt}
-          ></textarea>
-        </div>
+      <div id={`${this.props.id}`}>
+        <textarea
+          id="title"
+          type="text"
+          maxLength="35"
+          onChange={this.handleChange}
+          name="title"
+          placeholder="Title"
+          value={this.state.title}
+        ></textarea>
+        <textarea
+          id="excerpt"
+          type="text"
+          maxLength="1000"
+          onChange={this.handleChange}
+          name="excerpt"
+          placeholder="Today I will...."
+          value={this.state.excerpt}
+        ></textarea>
       </div>
     );
   }

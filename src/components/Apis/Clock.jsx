@@ -9,12 +9,10 @@ export default class Clock extends Component {
 
   render() {
     return (
-      <div className="clockContainer">
-        <div className="clock">
-          <div className="minuteHand" id="min"></div>
-          <div className="hourHand" id="hr"></div>
-          <div className="secondHand" id="sec"></div>
-        </div>
+      <div className="clock">
+        <div className="minuteHand" id="min"></div>
+        <div className="hourHand" id="hr"></div>
+        <div className="secondHand" id="sec"></div>
       </div>
     );
   }

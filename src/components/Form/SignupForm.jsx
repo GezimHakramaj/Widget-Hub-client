@@ -11,7 +11,7 @@ export default class SignupForm extends Component {
   };
 
   render() {
-    if (this.state.loggedIn) return <Redirect to="/" />;
+    if (this.state.loggedIn) return <Redirect to="/homepage" />;
     return (
       <div className="formContainer">
         <form onSubmit={this.handleSubmit}>
@@ -33,14 +33,10 @@ export default class SignupForm extends Component {
       email: e.target["email"].value,
       password: e.target["password"].value,
     };
-
-    await signup(data)
-      .then(async () => {
-        const { email, password } = data;
-        await login({ email, password })
-          .then((user) => this.setState({ loggedIn: true }))
-          .catch((err) => console.error(err));
-      })
-      .catch((err) => console.error(err));
+    await signup(data);
+    await login({ email: data.email, password: data.password }).then((user) => {
+      console.log(user);
+      this.setState({ loggedIn: true });
+    });
   };
 }

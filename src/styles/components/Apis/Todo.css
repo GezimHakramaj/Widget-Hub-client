@@ -1,80 +1,79 @@
-/* 
--------------------------------------------------------------
-Todo List styles below.
-*/
-
-.todoListContainer {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid black;
-  justify-content: center;
-  align-items: center;
-}
-
-.todoListHeader {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-}
-
-/* Button on todo list header. */
-.todoListHeader button {
-  margin-left: 1em;
-  background-color: transparent;
-  border: 0.1em solid white;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 0.75em;
-}
-
 .todoList {
-  height: 30vmin;
-  width: 30vmin;
+  height: 40vmin;
+  width: 35vmin;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  background-color: lightgray;
+  border-radius: 1vmin;
+  overflow: hidden;
 }
-/* 
--------------------------------------------------------------
-Todo Item styles below.
-*/
 
-.todoItem {
+nav {
+  height: 10%;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+nav input[type="radio"] {
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.radio {
+  height: 150%;
+  max-width: 20%;
+  background-color: lightcoral;
+  cursor: pointer;
+}
+
+nav input[type="radio"]:checked + label {
+  background-color: wheat;
+}
+
+.items {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.items > div {
   height: 100%;
   width: 100%;
-  border: 0.01em solid white;
-}
-
-.itemTitle {
-  height: 20%;
-  width: 100%;
-  border-bottom: 0.01em solid white;
-}
-
-.itemTitle textarea {
-  text-align: center;
-}
-
-.itemExcerpt {
-  height: 79%;
-  width: 100%;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
 }
 
 textarea {
-  height: 100%;
+  margin-top: 0.5vmin;
   width: 100%;
-  padding: 0;
-  margin: 0;
-  text-align: center;
+  text-align: start;
   border: none;
   background-color: transparent;
   color: white;
   outline: transparent;
-  font-size: 2vmin;
   resize: none;
+  overflow: auto;
+}
+
+#title {
+  height: 20%;
+  font-size: 2.5vmin;
+  border-bottom: 0.1vmin solid white;
+}
+
+#excerpt {
+  height: 80%;
+  font-size: 2vmin;
 }
 
 textarea::placeholder {
@@ -85,12 +84,20 @@ textarea:focus::placeholder {
   outline: none;
 }
 
+.items::-webkit-scrollbar,
 textarea::-webkit-scrollbar {
   width: 1vmin;
-  background-color: transparent;
+  height: 1vmin;
+  cursor: pointer;
 }
 
+.items::-webkit-scrollbar-thumb,
 textarea::-webkit-scrollbar-thumb {
-  background-color: gray;
-  cursor: pointer;
+  background: lightgray;
+  border-radius: 10vmin;
+}
+
+.items::-webkit-scrollbar-track,
+textarea::-webkit-scrollbar-track {
+  background: transparent;
 }

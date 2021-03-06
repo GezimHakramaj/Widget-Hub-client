@@ -1,19 +1,9 @@
 .hub {
   position: relative;
-  width: 100%;
+  width: 80%;
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 5vmin;
-  border: 0.1em solid white;
-}
-
-.hub::before {
-  position: absolute;
-  left: 50%;
-  content: "";
-  height: 100%;
-  width: 0.1em;
-  background-color: white;
+  flex-direction: column;
+  padding-bottom: 5vmin;
 }
 
 .hub > div {
@@ -21,7 +11,8 @@
 }
 
 .widget {
-  height: 50vmin;
+  margin-top: 5vmin;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;

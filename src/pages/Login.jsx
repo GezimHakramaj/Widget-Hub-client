@@ -1,9 +1,7 @@
-import React, { Component } from "react";
-
 import { LoginForm } from "../components/index";
 
 import "../styles/components/Form/Forms.css";
 
-export function Login() {
+export default function Login() {
   return <LoginForm />;
 }

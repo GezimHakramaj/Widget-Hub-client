@@ -24,3 +24,10 @@ export async function updatePrefs(data) {
   const res = await put(`${process.env.REACT_APP_UPDATE_PREFS_URL}`, data);
   return res;
 }
+
+export async function submitTasks(data) {
+  await del(`${process.env.REACT_APP_DELETE_TASKS_URL}`);
+  await post(`${process.env.REACT_APP_SUBMIT_TASKS_URL}`, data);
+  const res = await get(`${process.env.REACT_APP_GET_TASKS_URL}`);
+  return res;
+}

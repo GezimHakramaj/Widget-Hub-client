@@ -12,7 +12,7 @@ export default class LoginForm extends Component {
   };
 
   render() {
-    if (this.state.loggedIn) return <Redirect to="/" />;
+    if (this.state.loggedIn) return <Redirect to="/homepage" />;
     return (
       <div className="formContainer">
         <form onSubmit={this.handleSubmit}>

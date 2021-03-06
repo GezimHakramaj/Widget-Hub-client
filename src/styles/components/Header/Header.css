@@ -1,6 +1,6 @@
 .header {
   height: 8vmin;
-  width: auto;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;

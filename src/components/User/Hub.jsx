@@ -1,50 +1,37 @@
-import React, { Component } from "react";
+import React, { useContext } from "react";
 import { Clock, Covid, News, Weather, List } from "../../components/index";
 
-import { me } from "../../adapters/userAdapters";
+import { UserContext } from "../../context/User";
 import "../../styles/components/User/Hub.css";
 
-export default class Hub extends Component {
-  state = {
-    user: {},
-  };
+export const Hub = () => {
+  const user = useContext(UserContext);
+  return (
+    <div className="hub">
+      {getUserPrefs(user).map((widget) => {
+        return <div className="widget">{widget}</div>;
+      })}
+    </div>
+  );
+};
 
-  componentDidMount = async () => {
-    await me().then((user) => {
-      this.setState({ user: user.data });
-      console.log(user.data);
-    });
-    console.log(this.state.user);
-  };
+function getUserPrefs(user) {
+  let widgets = [];
+  const {
+    pref: {
+      clock = true,
+      toDoList = true,
+      covid = false,
+      weather = false,
+      news = false,
+    } = {},
+  } = user;
 
-  render() {
-    return (
-      <div className="hub">
-        {this.getUserPrefs().map((widget) => {
-          return <div className="widget">{widget}</div>;
-        })}
-      </div>
-    );
-  }
+  if (weather) widgets.push(<Weather />);
+  if (news) widgets.push(<News />);
+  if (covid) widgets.push(<Covid />);
+  if (clock) widgets.push(<Clock />);
+  if (toDoList) widgets.push(<List />);
 
-  getUserPrefs() {
-    let widgets = [];
-    const {
-      pref: {
-        clock = true,
-        toDoList = true,
-        covid = false,
-        weather = false,
-        news = false,
-      } = {},
-    } = this.state.user || {};
-
-    if (weather) widgets.push(<Weather />);
-    if (news) widgets.push(<News />);
-    if (covid) widgets.push(<Covid />);
-    if (clock) widgets.push(<Clock />);
-    if (toDoList) widgets.push(<List />);
-
-    return widgets;
-  }
+  return widgets;
 }

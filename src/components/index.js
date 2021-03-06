@@ -1,9 +1,9 @@
-export { default as Hub } from "./User/Hub";
+export { Hub } from "./User/Hub";
 export { default as Logout } from "./User/Logout";
 
 export { default as Clock } from "./Apis/Clock"; // Clock component
 export { default as Item } from "./Apis/Todo/Item"; // Todo component
-export { default as List } from "./Apis/Todo/List"; // ^^
+export { List } from "./Apis/Todo/List"; // ^^
 export { default as Covid } from "./Apis/Covid"; // Covid api
 export { default as Weather } from "./Apis/Weather"; // Weather api
 export { default as News } from "./Apis/News/News"; // News component

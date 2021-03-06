@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 
 import { me, updatePrefs } from "../../adapters/userAdapters";
 
@@ -21,14 +21,19 @@ export default class PrefsForm extends Component {
   };
 
   render() {
-    if (this.state.redirect) return <Redirect to="/" />;
+    if (this.state.redirect) return <Redirect to="/homepage" />;
     return (
-      <div className="formContainer">
-        <form onSubmit={this.handleSubmit}>
-          {this.populateForm()}
-          <input type="submit" value="Submit" />
-        </form>
-      </div>
+      <>
+        <div className="formContainer">
+          <form onSubmit={this.handleSubmit}>
+            {this.populateForm()}
+            <input type="submit" value="Submit" />
+            <li>
+              <Link to="/homepage">Back</Link>
+            </li>
+          </form>
+        </div>
+      </>
     );
   }
 

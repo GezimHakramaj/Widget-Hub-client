@@ -2,6 +2,6 @@ import { SignupForm } from "../components/index";
 
 import "../styles/components/Form/Forms.css";
 
-export function Signup() {
+export default function Signup() {
   return <SignupForm />;
 }
