@@ -19,7 +19,7 @@ export default class SignupForm extends Component {
           <Input item="Last Name: " name="lastname" placeholder="Doe" />
           <Input item="Email: " name="email" placeholder="alexdoe@email.com" />
           <Input item="Password: " name="password" placeholder="********" />
-          <input type="submit" />
+          <input className="formSubmit" type="submit" value="Submit" />
         </form>
       </div>
     );

@@ -18,7 +18,7 @@ export default class LoginForm extends Component {
         <form onSubmit={this.handleSubmit}>
           <Input item="Email: " name="email" placeholder="alexdoe@email.com" />
           <Input item="Password: " name="password" placeholder="********" />
-          <input type="submit" value="Submit" />
+          <input className="formSubmit" type="submit" value="Submit" />
         </form>
       </div>
     );

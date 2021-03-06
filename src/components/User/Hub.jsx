@@ -6,6 +6,7 @@ import "../../styles/components/User/Hub.css";
 
 export const Hub = () => {
   const user = useContext(UserContext);
+  console.log(user);
   return (
     <div className="hub">
       {getUserPrefs(user).map((widget) => {

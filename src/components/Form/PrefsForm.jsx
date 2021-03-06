@@ -27,7 +27,7 @@ export default class PrefsForm extends Component {
         <div className="formContainer">
           <form onSubmit={this.handleSubmit}>
             {this.populateForm()}
-            <input type="submit" value="Submit" />
+            <input className="formSubmit" type="submit" value="Submit" />
             <li>
               <Link to="/homepage">Back</Link>
             </li>

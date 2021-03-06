@@ -1,11 +1,16 @@
 .todoList {
+  position: relative;
   height: 40vmin;
   width: 35vmin;
   display: flex;
   flex-direction: column;
-  background-color: lightgray;
+  background-color: gray;
   border-radius: 1vmin;
-  overflow: hidden;
+  overflow-x: hidden;
+  border: 0vmin solid #282c34;
+  box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.5),
+    inset 0 -15px 15px rgba(0, 0, 0, 0.2), 0 15px 15px rgba(0, 0, 0, 0.8),
+    inset 0 5px 5px rgba(0, 0, 0, 0.6);
 }
 
 nav {
@@ -22,14 +27,20 @@ nav input[type="radio"] {
 }
 
 .radio {
-  height: 150%;
+  height: 80%;
   max-width: 20%;
-  background-color: lightcoral;
+  background-color: lightblue;
   cursor: pointer;
+  margin: 0.1vmin;
+  border-radius: 10%;
 }
 
-nav input[type="radio"]:checked + label {
-  background-color: wheat;
+.radio:nth-child(1) {
+  margin-left: 0;
+}
+
+.radio:nth-child(5) {
+  margin-right: 0;
 }
 
 .items {
@@ -49,12 +60,10 @@ nav input[type="radio"]:checked + label {
   scroll-snap-align: start;
   flex-shrink: 0;
   transform-origin: center center;
-  transform: scale(1);
-  transition: transform 0.5s;
 }
 
 textarea {
-  margin-top: 0.5vmin;
+  margin-top: 1vmin;
   width: 100%;
   text-align: start;
   border: none;
@@ -66,14 +75,16 @@ textarea {
 }
 
 #title {
-  height: 20%;
-  font-size: 2.5vmin;
+  height: 15%;
+  font-size: 2vmin;
+  text-align: center;
   border-bottom: 0.1vmin solid white;
 }
 
 #excerpt {
   height: 80%;
-  font-size: 2vmin;
+  font-size: 1.75vmin;
+  margin-left: 1vmin;
 }
 
 textarea::placeholder {
@@ -100,4 +111,22 @@ textarea::-webkit-scrollbar-thumb {
 .items::-webkit-scrollbar-track,
 textarea::-webkit-scrollbar-track {
   background: transparent;
+}
+
+.todoButton {
+  height: 3vmin;
+  width: 15vmin;
+  bottom: -10%;
+  left: 50%;
+  border-radius: 2vmin;
+  position: absolute;
+  transform: translate(-50%);
+  background: gray;
+  color: white;
+  margin-top: 1vmin;
+  font-size: 2vmin;
+  border: 0.2vmin solid #282c34;
+  box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.5),
+    inset 0 -10px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.5),
+    inset 0 5px 5px rgba(0, 0, 0, 0.25);
 }

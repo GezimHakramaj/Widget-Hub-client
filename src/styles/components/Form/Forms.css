@@ -39,7 +39,7 @@ input {
   outline: none;
 }
 
-input[type="submit"] {
+.formSubmit {
   height: 3vmin;
   width: 15vmin;
   background: transparent;

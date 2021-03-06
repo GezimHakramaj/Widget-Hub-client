@@ -25,9 +25,7 @@ export async function updatePrefs(data) {
   return res;
 }
 
-export async function submitTasks(data) {
-  await del(`${process.env.REACT_APP_DELETE_TASKS_URL}`);
-  await post(`${process.env.REACT_APP_SUBMIT_TASKS_URL}`, data);
-  const res = await get(`${process.env.REACT_APP_GET_TASKS_URL}`);
+export async function updateTasks(data) {
+  const res = await put(`${process.env.REACT_APP_UPDATE_TASKS_URL}`, data);
   return res;
 }

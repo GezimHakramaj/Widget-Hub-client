@@ -11,11 +11,11 @@ export default class Item extends Component {
 
   render() {
     return (
-      <div id={`${this.props.id}`}>
+      <div className="item" id={`${this.props.id}`}>
         <textarea
           id="title"
           type="text"
-          maxLength="35"
+          maxLength="50"
           onChange={this.handleChange}
           name="title"
           placeholder="Title"
